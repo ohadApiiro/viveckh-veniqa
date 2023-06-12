@@ -16,7 +16,7 @@ router.get('/getProductDetails', passportAuth.isAuthenticated, passportAuth.canV
 
 router.put('/updateProduct', passportAuth.isAuthenticated, passportAuth.canManageCatalog, catalogController.updateProductInCatalog);
 
-router.delete('/deleteProduct', passportAuth.isAuthenticated, passportAuth.canManageCatalog, catalogController.deleteProductFromCatalog);
+router.delete('/deleteProduct', passportAuth.isNotAuthenticated, passportAuth.canManageCatalog, catalogController.deleteProductFromCatalog);
 
 router.get('/getPresignedUrlsForCatalogImageUploads', passportAuth.isAuthenticated, passportAuth.canManageCatalog, catalogController.getPresignedUrlsForCatalogImageUploads);
 
