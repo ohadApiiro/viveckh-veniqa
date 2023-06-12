@@ -98,6 +98,10 @@ export default {
             return res.status(HttpStatusCode.UNAUTHORIZED).send('only for logged in users')
         }
     },
+    
+    isNotAuthenticated(req, res, done){ 
+        done()
+    },
 
     isSuperAdmin(req, res, done) {
         // Validate if admin is a superadmin, otherwise return a 401
